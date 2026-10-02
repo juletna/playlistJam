@@ -1,5 +1,7 @@
 # Playlist Jam
 
+[Voir le projet sur GitHub](https://github.com/juletna/playlistJam)
+
 Un répertoire personnel dans le navigateur. Sans base de données, sans compte, sans service distant.
 
 ## Ouvrir le carnet
