@@ -1,0 +1,13 @@
+---
+title: Paper Planes
+artist: M.I.A.
+year: null
+decade: 2000
+style: ""
+loop: unknown
+chords: D - C - G
+note: Accords et décennie importés de la liste de départ ; boucle originale à
+  vérifier.
+lyricsUrl: ""
+---
+
