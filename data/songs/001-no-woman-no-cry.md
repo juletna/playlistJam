@@ -4,10 +4,13 @@ artist: Bob Marley
 year: null
 decade: 1970
 style: ""
-loop: yes
+loop: no
 chords: C - G - Am - F
-note: Accords et décennie importés de la liste de départ ; boucle originale à
-  vérifier.
+note: |-
+  Accords et décennie importés de la liste de départ.
+
+  Boucle — revue documentaire du 03/10/2026 : Le refrain prolonge C–G/B–Am–F par C–F–C–G ; le couplet ne reprend que la première moitié. Ce n’est donc pas une boucle unique.
+  Source : https://www.justinguitar.com/songs/bob-marley-no-woman-no-cry-chords-tabs-guitar-lesson-sg-193
 lyricsUrl: ""
 ---
 

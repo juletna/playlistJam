@@ -4,10 +4,16 @@ artist: Blink-182
 year: null
 decade: 1990
 style: ""
-loop: unknown
+loop: no
 chords: C - G - F
-note: Accords et décennie importés de la liste de départ ; boucle originale à
-  vérifier.
+note: >-
+  Accords et décennie importés de la liste de départ.
+
+
+  Boucle — revue documentaire du 03/10/2026 : Les mêmes accords sont réorganisés
+  entre couplet, refrain et pont.
+
+  Source : https://www.e-chords.com/chords/blink-182/all-the-small-things
 lyricsUrl: ""
 ---
 

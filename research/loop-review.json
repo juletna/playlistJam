@@ -1,0 +1,1338 @@
+{
+  "date": "2026-10-03",
+  "criterion": "Version publiée par l’artiste indiqué : même progression harmonique, même ordre et même tonalité sur toutes les sections. Aucune limite au nombre d’accords ou à la longueur du cycle. Les renversements, enrichissements, silences et variations de jeu seuls ne constituent pas une nouvelle grille. Une section contrastante ou une modulation entraîne non. Les introductions et sorties ambiguës restent à vérifier. Analyse documentaire des grilles et leçons, sans écoute audio systématique ; les transcriptions peuvent contenir des simplifications. Les accords cités peuvent être transposés par la source.",
+  "reviews": [
+    {
+      "n": 1,
+      "loop": "no",
+      "reason": "Le refrain prolonge C–G/B–Am–F par C–F–C–G ; le couplet ne reprend que la première moitié. Ce n’est donc pas une boucle unique.",
+      "sources": [
+        "https://www.justinguitar.com/songs/bob-marley-no-woman-no-cry-chords-tabs-guitar-lesson-sg-193"
+      ],
+      "id": "001-no-woman-no-cry",
+      "title": "No Woman, No Cry",
+      "artist": "Bob Marley"
+    },
+    {
+      "n": 2,
+      "loop": "no",
+      "reason": "D–C–G domine, mais un passage en F interrompt la boucle dans la version originale.",
+      "sources": [
+        "https://songnotes.net/lessons/43/"
+      ],
+      "id": "002-sweet-home-alabama",
+      "title": "Sweet Home Alabama",
+      "artist": "Lynyrd Skynyrd"
+    },
+    {
+      "n": 3,
+      "loop": "unknown",
+      "reason": "Cycle de quintes récurrent documenté, mais l’introduction et les transitions de la version originale restent à contrôler avant de confirmer une boucle intégrale.",
+      "sources": [
+        "https://jamzone.musicwill.org/Songchart/Guitar-IWillSurvive-GloriaGaynor.pdf"
+      ],
+      "id": "003-i-will-survive",
+      "title": "I Will Survive",
+      "artist": "Gloria Gaynor"
+    },
+    {
+      "n": 4,
+      "loop": "no",
+      "reason": "Alternance F–G dominante, avec un accord de Am exceptionnel : la grille originale n’est pas strictement identique partout.",
+      "sources": [
+        "https://www.ethanhein.com/wp/2025/what-key-is-dreams-by-fleetwood-mac-actually-in/"
+      ],
+      "id": "004-dreams",
+      "title": "Dreams",
+      "artist": "Fleetwood Mac"
+    },
+    {
+      "n": 5,
+      "loop": "unknown",
+      "reason": "La grille à deux accords est une simplification ; la leçon mentionne un troisième accord E7sus4. Son rôle exact dans la version originale reste à vérifier.",
+      "sources": [
+        "https://www.justinguitar.com/songs/america-a-horse-with-no-name-chords-tabs-guitar-lesson-sg-014"
+      ],
+      "id": "005-a-horse-with-no-name",
+      "title": "A Horse With No Name",
+      "artist": "America"
+    },
+    {
+      "n": 6,
+      "loop": "yes",
+      "reason": "Même cycle A–D–E : une mesure de A puis une demi-mesure de D et de E ; variations de groove sans nouvelle grille.",
+      "sources": [
+        "https://www.ethanhein.com/wp/2015/musical-simples-stir-it-up/"
+      ],
+      "id": "006-stir-it-up",
+      "title": "Stir It Up",
+      "artist": "Bob Marley"
+    },
+    {
+      "n": 7,
+      "loop": "no",
+      "reason": "Les couplets quittent l’alternance C–F pour un passage en Dm ; la boucle de basse ne suffit pas à décrire toute l’harmonie.",
+      "sources": [
+        "https://www.e-chords.com/chords/lou-reed/walk-on-the-wild-side"
+      ],
+      "id": "007-walk-on-the-wild-side",
+      "title": "Walk on the Wild Side",
+      "artist": "Lou Reed"
+    },
+    {
+      "n": 8,
+      "loop": "yes",
+      "reason": "Même cycle harmonique sur les fondamentales E et A ; voicings et enrichissements diffèrent entre couplet et refrain sans nouvelle grille de base.",
+      "sources": [
+        "https://spytunes.com/good-times-chords/"
+      ],
+      "id": "008-good-times",
+      "title": "Good Times",
+      "artist": "Chic"
+    },
+    {
+      "n": 9,
+      "loop": "yes",
+      "reason": "Un cycle long de deux phrases revient : Am–F–C–G, puis Am–F–C–E. Ce n’est pas une simple boucle de quatre accords.",
+      "sources": [
+        "https://www.e-chords.com/chords/iggy-pop/the-passenger"
+      ],
+      "id": "009-the-passenger",
+      "title": "The Passenger",
+      "artist": "Iggy Pop"
+    },
+    {
+      "n": 10,
+      "loop": "yes",
+      "reason": "Cycle D–C–G répété dans les couplets et refrains, sans changement de grille.",
+      "sources": [
+        "https://www.martyschwartzguitar.com/werewolves-of-london-by-warren-zevon-guitar-lesson-chords-techniques/"
+      ],
+      "id": "010-werewolves-of-london",
+      "title": "Werewolves of London",
+      "artist": "Warren Zevon"
+    },
+    {
+      "n": 11,
+      "loop": "no",
+      "reason": "Même schéma de degrés, mais modulation de C majeur à D majeur au solo : C–G–Am–F devient D–A–Bm–G.",
+      "sources": [
+        "https://ukuleleforguitarplayers.com/so-lonely"
+      ],
+      "id": "011-so-lonely",
+      "title": "So Lonely",
+      "artist": "The Police"
+    },
+    {
+      "n": 12,
+      "loop": "no",
+      "reason": "Les phrases comportent des passages Em7–Dm7 et le pont se stabilise sur Am : pas une boucle unique.",
+      "sources": [
+        "https://www.e-chords.com/chords/bill-withers/aint-no-sunshine"
+      ],
+      "id": "012-ain-t-no-sunshine",
+      "title": "Ain't No Sunshine",
+      "artist": "Bill Withers"
+    },
+    {
+      "n": 13,
+      "loop": "no",
+      "reason": "La version JJ Cale alterne C#–B dans les couplets, puis descend C#–B–A–Ab au refrain.",
+      "sources": [
+        "https://www.e-chords.com/chords/jj-cale/cocaine"
+      ],
+      "id": "013-cocaine",
+      "title": "Cocaine",
+      "artist": "JJ Cale"
+    },
+    {
+      "n": 14,
+      "loop": "no",
+      "reason": "Le pont utilise une autre progression ; G–D–C–D ne couvre pas toutes les sections.",
+      "sources": [
+        "https://www.jonmaclennan.com/blog/wonderful-tonight-chords"
+      ],
+      "id": "014-wonderful-tonight",
+      "title": "Wonderful Tonight",
+      "artist": "Eric Clapton"
+    },
+    {
+      "n": 15,
+      "loop": "no",
+      "reason": "Un pont avec une autre suite d’accords interrompt l’alternance Em–A.",
+      "sources": [
+        "https://www.jonmaclennan.com/blog/breathe-pink-floyd-guitar-lesson"
+      ],
+      "id": "015-breathe",
+      "title": "Breathe",
+      "artist": "Pink Floyd"
+    },
+    {
+      "n": 16,
+      "loop": "unknown",
+      "reason": "Ostinato issu de Good Times identifié, mais structure intégrale de la version originale longue non vérifiée.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rapper%27s_Delight"
+      ],
+      "id": "016-rapper-s-delight",
+      "title": "Rapper's Delight",
+      "artist": "The Sugarhill Gang"
+    },
+    {
+      "n": 17,
+      "loop": "no",
+      "reason": "Les couplets quittent Emaj7–C#m7 pour F#m et B ; le pont emploie encore une autre grille.",
+      "sources": [
+        "https://spytunes.com/whats-going-on-chords/"
+      ],
+      "id": "017-what-s-going-on",
+      "title": "What's Going On",
+      "artist": "Marvin Gaye"
+    },
+    {
+      "n": 18,
+      "loop": "no",
+      "reason": "Refrain A–G–D–G11 et couplet A–Em7–D : progressions différentes.",
+      "sources": [
+        "https://spytunes.com/we-are-family-chords/"
+      ],
+      "id": "018-we-are-family",
+      "title": "We Are Family",
+      "artist": "Sister Sledge"
+    },
+    {
+      "n": 19,
+      "loop": "no",
+      "reason": "Couplet, passage de transition et refrain distincts ; la suite A–D–E ne représente pas tout le morceau.",
+      "sources": [
+        "https://www.reddit.com/r/u_Guitar_Control/comments/qzm73b"
+      ],
+      "id": "019-blitzkrieg-bop",
+      "title": "Blitzkrieg Bop",
+      "artist": "Ramones"
+    },
+    {
+      "n": 20,
+      "loop": "no",
+      "reason": "Riff de couplet, refrain et pont distincts ; E5 apparaît aussi en fin de couplet.",
+      "sources": [
+        "https://www.guitarclub.io/blog/highway-to-hell-guitar-lesson-acdc"
+      ],
+      "id": "020-highway-to-hell",
+      "title": "Highway to Hell",
+      "artist": "AC/DC"
+    },
+    {
+      "n": 21,
+      "loop": "yes",
+      "reason": "Cycle D–A–Bm–G maintenu ; les changements portent sur l’arrangement et l’intensité.",
+      "sources": [
+        "https://www.guitar-pro.com/tabs/t/3442-with-or-without-you",
+        "https://en.wikipedia.org/wiki/With_or_Without_You"
+      ],
+      "id": "021-with-or-without-you",
+      "title": "With or Without You",
+      "artist": "U2"
+    },
+    {
+      "n": 22,
+      "loop": "no",
+      "reason": "Le refrain allonge les accords puis passe à C–Em–D et C–D, contrairement à la grille du couplet.",
+      "sources": [
+        "https://www.jonmaclennan.com/blog/fast-car-guitar-lesson"
+      ],
+      "id": "022-fast-car",
+      "title": "Fast Car",
+      "artist": "Tracy Chapman"
+    },
+    {
+      "n": 23,
+      "loop": "no",
+      "reason": "La montée A–Bm–C#m–D laisse place à C#m–Bm au pré-refrain et à une autre section en E et F#m.",
+      "sources": [
+        "https://www.musicradar.com/artists/when-i-was-growing-up-there-was-peer-pressure-on-you-to-conform-to-be-a-certain-way-and-as-an-english-boy-at-the-time-youre-encouraged-not-to-show-your-emotion-to-any-degree-how-the-young-robert-smith-created-one-of-the-cures-definitive-songs"
+      ],
+      "id": "023-boys-don-t-cry",
+      "title": "Boys Don't Cry",
+      "artist": "The Cure"
+    },
+    {
+      "n": 24,
+      "loop": "no",
+      "reason": "Le refrain emploie une autre progression que le couplet ; le riff ne résume pas la grille complète.",
+      "sources": [
+        "https://www.songsterr.com/a/wsa/survivor-eye-of-the-tiger-chords-s89089"
+      ],
+      "id": "024-eye-of-the-tiger",
+      "title": "Eye of the Tiger",
+      "artist": "Survivor"
+    },
+    {
+      "n": 25,
+      "loop": "no",
+      "reason": "Le couplet commence sur Bm ; le refrain remplace ce départ par D (D–A–Bm–G–A).",
+      "sources": [
+        "https://www.justinguitar.com/songs/men-at-work-down-under-chords-tabs-guitar-lesson-sg-128"
+      ],
+      "id": "025-down-under",
+      "title": "Down Under",
+      "artist": "Men At Work"
+    },
+    {
+      "n": 26,
+      "loop": "no",
+      "reason": "Le couplet E–B–A–B laisse place à C#m–B puis A–B au refrain.",
+      "sources": [
+        "https://www.amchords.com/keyboard/suzanne-vega/luka"
+      ],
+      "id": "026-luka",
+      "title": "Luka",
+      "artist": "Suzanne Vega"
+    },
+    {
+      "n": 27,
+      "loop": "yes",
+      "reason": "Dans la version album de 1984, même alternance de quatre mesures par accord, B et E, au couplet et au refrain.",
+      "sources": [
+        "https://songlexikon.de/songs/bornintheusa/"
+      ],
+      "id": "027-born-in-the-u-s-a",
+      "title": "Born in the U.S.A.",
+      "artist": "Bruce Springsteen"
+    },
+    {
+      "n": 28,
+      "loop": "yes",
+      "reason": "L’arrangement vocal a cappella maintient le cycle B–C#m–E–B ; aucune grille contrastante dans la transcription.",
+      "sources": [
+        "https://www.e-chords.com/chords/bobby-mcferrin/dont-worry-be-happy"
+      ],
+      "id": "028-don-t-worry-be-happy",
+      "title": "Don't Worry, Be Happy",
+      "artist": "Bobby McFerrin"
+    },
+    {
+      "n": 29,
+      "loop": "no",
+      "reason": "Couplet Am–G–F–Em, refrain F–G–Am–C : ordre et accords différents.",
+      "sources": [
+        "https://www.chords-and-tabs.net/song/name/the-cure-lovesong-24"
+      ],
+      "id": "029-lovesong",
+      "title": "Lovesong",
+      "artist": "The Cure"
+    },
+    {
+      "n": 30,
+      "loop": "no",
+      "reason": "La version originale de Suzanne Vega est a cappella, sans boucle d’accords jouée. Ne pas la confondre avec le remix de DNA.",
+      "sources": [
+        "https://www.musicradar.com/artists/singers-songwriters/i-kept-it-a-cappella-and-began-to-sing-it-this-way-in-my-live-show-this-detail-affected-everything-to-come-the-butterfly-effect-of-toms-diner-how-suzanne-vegas-choice-affected-the-way-we-all-listen-to-music"
+      ],
+      "id": "030-tom-s-diner",
+      "title": "Tom's Diner",
+      "artist": "Suzanne Vega"
+    },
+    {
+      "n": 31,
+      "loop": "no",
+      "reason": "Le refrain passe à Em–C puis D, contrairement au riff de couplet en G et C.",
+      "sources": [
+        "https://www.e-chords.com/chords/violent-femmes/blister-in-the-sun"
+      ],
+      "id": "031-blister-in-the-sun",
+      "title": "Blister in the Sun",
+      "artist": "Violent Femmes"
+    },
+    {
+      "n": 32,
+      "loop": "no",
+      "reason": "La transcription distingue un vamp de couplet, D–G au refrain, puis D–C–G en sortie.",
+      "sources": [
+        "https://talking-heads.rosshudson.co.uk/talking-heads/remain-in-light/once-in-a-lifetime/"
+      ],
+      "id": "032-once-in-a-lifetime",
+      "title": "Once in a Lifetime",
+      "artist": "Talking Heads"
+    },
+    {
+      "n": 33,
+      "loop": "no",
+      "reason": "La dernière phrase du refrain réorganise la progression principale et supprime notamment le C#m intermédiaire.",
+      "sources": [
+        "https://mtosmt.org/issues/mto.17.23.4/mto.17.23.4.forrest.html"
+      ],
+      "id": "033-where-is-my-mind",
+      "title": "Where Is My Mind?",
+      "artist": "Pixies"
+    },
+    {
+      "n": 34,
+      "loop": "yes",
+      "reason": "Bm–A–E revient sur toutes les sections de l’enregistrement ; pas de grille contrastante.",
+      "sources": [
+        "https://www.patreon.com/goodguitarist/posts/wicked-game-46132085"
+      ],
+      "id": "034-wicked-game",
+      "title": "Wicked Game",
+      "artist": "Chris Isaak"
+    },
+    {
+      "n": 35,
+      "loop": "no",
+      "reason": "Le refrain transforme l’harmonie et le rythme des accords du couplet ; le motif principal ne couvre pas tout le morceau.",
+      "sources": [
+        "https://www.songsterr.com/a/wsa/soft-cell-tainted-love-chords-s248316"
+      ],
+      "id": "035-tainted-love",
+      "title": "Tainted Love",
+      "artist": "Soft Cell"
+    },
+    {
+      "n": 36,
+      "loop": "no",
+      "reason": "Le refrain V–IV–I diffère du couplet centré sur I et IV.",
+      "sources": [
+        "https://www.e-chords.com/chords/u2/i-still-havent-found-what-im-looking-for"
+      ],
+      "id": "036-i-still-haven-t-found-what-i-m-looking-for",
+      "title": "I Still Haven't Found What I'm Looking For",
+      "artist": "U2"
+    },
+    {
+      "n": 37,
+      "loop": "unknown",
+      "reason": "La transcription donne un cycle commun aux couplets et refrains, mais une introduction et une sortie différentes ou abrégées. L’original doit être recoupé pour trancher.",
+      "sources": [
+        "https://ukutabs.com/j/joy-division/love-will-tear-us-apart/"
+      ],
+      "id": "037-love-will-tear-us-apart",
+      "title": "Love Will Tear Us Apart",
+      "artist": "Joy Division"
+    },
+    {
+      "n": 38,
+      "loop": "no",
+      "reason": "La section finale et le solo introduisent une grille différente de D–C–G.",
+      "sources": [
+        "https://www.gearnews.com/how-to-play-sweet-child-o-mine-on-guitar/"
+      ],
+      "id": "038-sweet-child-o-mine",
+      "title": "Sweet Child O' Mine",
+      "artist": "Guns N' Roses"
+    },
+    {
+      "n": 39,
+      "loop": "no",
+      "reason": "Couplet et refrain suivent des progressions différentes.",
+      "sources": [
+        "https://www.guitarnoise.com/lessons/time-after-time/"
+      ],
+      "id": "039-time-after-time",
+      "title": "Time After Time",
+      "artist": "Cyndi Lauper"
+    },
+    {
+      "n": 40,
+      "loop": "no",
+      "reason": "Le couplet quitte Em–D–Em pour G–D–C ; le pont comporte une autre grille.",
+      "sources": [
+        "https://www.justinguitar.com/songs/r-e-m-the-one-i-love-chords-tabs-guitar-lesson-sg-140"
+      ],
+      "id": "040-the-one-i-love",
+      "title": "The One I Love",
+      "artist": "R.E.M."
+    },
+    {
+      "n": 41,
+      "loop": "yes",
+      "reason": "G–B–C–Cm se répète sur toutes les sections.",
+      "sources": [
+        "https://www.laurenbateman.com/creep-chords-and-guitar-lesson/"
+      ],
+      "id": "041-creep",
+      "title": "Creep",
+      "artist": "Radiohead"
+    },
+    {
+      "n": 42,
+      "loop": "yes",
+      "reason": "La même progression A–Bm–D–A accompagne les couplets et les refrains.",
+      "sources": [
+        "https://www.youtube.com/watch?v=t8D7Ov24aEY"
+      ],
+      "id": "042-what-s-up",
+      "title": "What's Up?",
+      "artist": "4 Non Blondes"
+    },
+    {
+      "n": 43,
+      "loop": "yes",
+      "reason": "Même cycle harmonique tout au long du morceau.",
+      "sources": [
+        "https://www.guitarplayerbox.com/tabs/The-Verve/Bitter-Sweet-Symphony/772/capo/7"
+      ],
+      "id": "043-bitter-sweet-symphony",
+      "title": "Bitter Sweet Symphony",
+      "artist": "The Verve"
+    },
+    {
+      "n": 44,
+      "loop": "no",
+      "reason": "La boucle principale reste stable, mais la section de solo constitue une exception.",
+      "sources": [
+        "https://www.justinguitar.com/songs/the-cranberries-zombie-chords-tabs-guitar-lesson-sg-141"
+      ],
+      "id": "044-zombie",
+      "title": "Zombie",
+      "artist": "The Cranberries"
+    },
+    {
+      "n": 45,
+      "loop": "no",
+      "reason": "Le couplet D–G–A et le refrain D–A–G inversent les deux derniers accords.",
+      "sources": [
+        "https://www.e-chords.com/chords/deep-blue-something/breakfast-at-tiffanys"
+      ],
+      "id": "045-breakfast-at-tiffany-s",
+      "title": "Breakfast at Tiffany's",
+      "artist": "Deep Blue Something"
+    },
+    {
+      "n": 46,
+      "loop": "no",
+      "reason": "Le pré-refrain D–E interrompt la progression F#m–D–A–E.",
+      "sources": [
+        "https://www.e-chords.com/chords/joan-osborne/one-of-us"
+      ],
+      "id": "046-one-of-us",
+      "title": "One of Us",
+      "artist": "Joan Osborne"
+    },
+    {
+      "n": 47,
+      "loop": "no",
+      "reason": "La section contrastante change la progression du riff principal.",
+      "sources": [
+        "https://www.martyschwartzguitar.com/self-esteem-by-the-offspring-guitar-lesson-chords-techniques/"
+      ],
+      "id": "047-self-esteem",
+      "title": "Self Esteem",
+      "artist": "The Offspring"
+    },
+    {
+      "n": 48,
+      "loop": "yes",
+      "reason": "Cycle mineur VI–iv–V–i récurrent issu de la boucle instrumentale ; pas de grille contrastante identifiée.",
+      "sources": [
+        "https://www.researchgate.net/publication/320048053_In_Search_of_the_Golden_Age_Hip-Hop_Sound_1986-1996/fulltext/59cb1461aca272bb0507a0e2/In-Search-of-the-Golden-Age-Hip-Hop-Sound-1986-1996.pdf"
+      ],
+      "id": "048-gangsta-s-paradise",
+      "title": "Gangsta's Paradise",
+      "artist": "Coolio"
+    },
+    {
+      "n": 49,
+      "loop": "yes",
+      "reason": "Même cycle G–Em–C–D–G dans les couplets, refrains et pont transcrits.",
+      "sources": [
+        "https://www.e-chords.com/chords/puff-daddy/ill-be-missing-you"
+      ],
+      "id": "049-i-ll-be-missing-you",
+      "title": "I'll Be Missing You",
+      "artist": "Puff Daddy"
+    },
+    {
+      "n": 50,
+      "loop": "no",
+      "reason": "Couplet Em7–G–D–A, pré-refrain et refrain différents : plusieurs grilles.",
+      "sources": [
+        "https://www.e-chords.com/chords/oasis/wonderwall"
+      ],
+      "id": "050-wonderwall",
+      "title": "Wonderwall",
+      "artist": "Oasis"
+    },
+    {
+      "n": 51,
+      "loop": "yes",
+      "reason": "Alternance D–G maintenue, y compris sous le solo.",
+      "sources": [
+        "https://guitaralliance.com/what-i-got/"
+      ],
+      "id": "051-what-i-got",
+      "title": "What I Got",
+      "artist": "Sublime"
+    },
+    {
+      "n": 52,
+      "loop": "no",
+      "reason": "Des passages en Dm et Bm7b5 interrompent Am–F–E.",
+      "sources": [
+        "https://www.e-chords.com/chords/santana/smooth"
+      ],
+      "id": "052-smooth",
+      "title": "Smooth",
+      "artist": "Santana ft. Rob Thomas"
+    },
+    {
+      "n": 53,
+      "loop": "no",
+      "reason": "Le refrain quitte l’alternance Em–G du couplet.",
+      "sources": [
+        "https://www.jonmaclennan.com/blog/about-a-girl-chords"
+      ],
+      "id": "053-about-a-girl",
+      "title": "About a Girl",
+      "artist": "Nirvana"
+    },
+    {
+      "n": 54,
+      "loop": "no",
+      "reason": "Couplet, refrain Am–F–C–G et pont Em–C emploient des grilles différentes.",
+      "sources": [
+        "https://www.e-chords.com/chords/red-hot-chili-peppers/otherside"
+      ],
+      "id": "054-otherside",
+      "title": "Otherside",
+      "artist": "Red Hot Chili Peppers"
+    },
+    {
+      "n": 55,
+      "loop": "yes",
+      "reason": "Am–F–C–G revient dans toutes les sections transcrites.",
+      "sources": [
+        "https://www.e-chords.com/chords/eagle-eye-cherry/save-tonight"
+      ],
+      "id": "055-save-tonight",
+      "title": "Save Tonight",
+      "artist": "Eagle-Eye Cherry"
+    },
+    {
+      "n": 56,
+      "loop": "no",
+      "reason": "Le solo passe à Bb–Ab–Eb–Cm, contrairement à G–D–Am–C.",
+      "sources": [
+        "https://www.e-chords.com/chords/semisonic/closing-time"
+      ],
+      "id": "056-closing-time",
+      "title": "Closing Time",
+      "artist": "Semisonic"
+    },
+    {
+      "n": 57,
+      "loop": "no",
+      "reason": "Les mêmes accords sont réorganisés entre couplet, refrain et pont.",
+      "sources": [
+        "https://www.e-chords.com/chords/blink-182/all-the-small-things"
+      ],
+      "id": "057-all-the-small-things",
+      "title": "All the Small Things",
+      "artist": "Blink-182"
+    },
+    {
+      "n": 58,
+      "loop": "no",
+      "reason": "Le pont emploie une progression contrastante avec un accord emprunté, puis revient au riff principal.",
+      "sources": [
+        "https://musictheoryalchemy.com/musictheoryanalysis/weezer-say-it-aint-so-bridge-music-theory-analysis/"
+      ],
+      "id": "058-say-it-ain-t-so",
+      "title": "Say It Ain't So",
+      "artist": "Weezer"
+    },
+    {
+      "n": 59,
+      "loop": "no",
+      "reason": "Le couplet G–C–D et les passages Em–D–C–G puis Em–G diffèrent.",
+      "sources": [
+        "https://www.e-chords.com/chords/green-day/good-riddance-time-of-your-life"
+      ],
+      "id": "059-good-riddance-time-of-your-life",
+      "title": "Good Riddance (Time of Your Life)",
+      "artist": "Green Day"
+    },
+    {
+      "n": 60,
+      "loop": "no",
+      "reason": "La fin du couplet et le pont quittent le riff initial ; plusieurs grilles.",
+      "sources": [
+        "https://www.e-chords.com/chords/meredith-brooks/bitch"
+      ],
+      "id": "060-bitch",
+      "title": "Bitch",
+      "artist": "Meredith Brooks"
+    },
+    {
+      "n": 61,
+      "loop": "no",
+      "reason": "Le passage majeur remplace la tonique mineure et réorganise le cycle : pas une seule grille.",
+      "sources": [
+        "https://www.e-chords.com/chords/gnarls-barkley/crazy"
+      ],
+      "id": "061-crazy",
+      "title": "Crazy",
+      "artist": "Gnarls Barkley"
+    },
+    {
+      "n": 62,
+      "loop": "yes",
+      "reason": "G–C–D–E majeur revient dans les couplets, refrains et ponts ; le cycle inclut une mesure courte.",
+      "sources": [
+        "https://richterguitar.com/hey-ya-outkast/"
+      ],
+      "id": "062-hey-ya",
+      "title": "Hey Ya!",
+      "artist": "Outkast"
+    },
+    {
+      "n": 63,
+      "loop": "no",
+      "reason": "Le pont Dm–Bb–F–A diffère de Dm–Gm–Bb–A.",
+      "sources": [
+        "https://www.e-chords.com/chords/amy-winehouse/back-to-black"
+      ],
+      "id": "063-back-to-black",
+      "title": "Back to Black",
+      "artist": "Amy Winehouse"
+    },
+    {
+      "n": 64,
+      "loop": "no",
+      "reason": "Le pont Db–Fm répété puis Eb interrompt Db–Eb–Ab–Fm.",
+      "sources": [
+        "https://www.e-chords.com/chords/coldplay/viva-la-vida"
+      ],
+      "id": "064-viva-la-vida",
+      "title": "Viva La Vida",
+      "artist": "Coldplay"
+    },
+    {
+      "n": 65,
+      "loop": "no",
+      "reason": "Le refrain commence sur G au lieu de Em : G–D–Bm–C contre Em–D–Bm–C.",
+      "sources": [
+        "https://www.e-chords.com/chords/red-hot-chili-peppers/cant-stop"
+      ],
+      "id": "065-can-t-stop",
+      "title": "Can't Stop",
+      "artist": "Red Hot Chili Peppers"
+    },
+    {
+      "n": 66,
+      "loop": "yes",
+      "reason": "Alternance Em–Bm7 sur la durée du morceau, avec changements de jeu et de dynamique.",
+      "sources": [
+        "https://www.justinguitar.com/songs/alicia-keys-fallin-chords-tabs-guitar-lesson-sg-024"
+      ],
+      "id": "066-fallin",
+      "title": "Fallin'",
+      "artist": "Alicia Keys"
+    },
+    {
+      "n": 67,
+      "loop": "no",
+      "reason": "La grille principale B–F#–G#m–E comporte des transitions supplémentaires et un passage de solo différent.",
+      "sources": [
+        "https://www.e-chords.com/chords/jason-mraz/im-yours"
+      ],
+      "id": "067-i-m-yours",
+      "title": "I'm Yours",
+      "artist": "Jason Mraz"
+    },
+    {
+      "n": 68,
+      "loop": "yes",
+      "reason": "Même cycle A–E/G#–D–A sur les différentes sections ; la montée est surtout dans l’arrangement.",
+      "sources": [
+        "https://www.e-chords.com/chords/snow-patrol/chasing-cars"
+      ],
+      "id": "068-chasing-cars",
+      "title": "Chasing Cars",
+      "artist": "Snow Patrol"
+    },
+    {
+      "n": 69,
+      "loop": "no",
+      "reason": "Le pré-refrain et le pont quittent Em–C–G–D (positions de la transcription).",
+      "sources": [
+        "https://www.e-chords.com/chords/linkin-park/numb"
+      ],
+      "id": "069-numb",
+      "title": "Numb",
+      "artist": "Linkin Park"
+    },
+    {
+      "n": 70,
+      "loop": "yes",
+      "reason": "F–C–Dm–Bb se répète dans les couplets rappés, refrains et passages instrumentaux.",
+      "sources": [
+        "https://www.e-chords.com/chords/black-eyed-peas/where-is-the-love"
+      ],
+      "id": "070-where-is-the-love",
+      "title": "Where Is the Love?",
+      "artist": "The Black Eyed Peas"
+    },
+    {
+      "n": 71,
+      "loop": "no",
+      "reason": "Le pont instrumental quitte le cycle des couplets et refrains.",
+      "sources": [
+        "https://www.songsterr.com/a/wsa/mgmt-kids-chords-s43337"
+      ],
+      "id": "071-kids",
+      "title": "Kids",
+      "artist": "MGMT"
+    },
+    {
+      "n": 72,
+      "loop": "yes",
+      "reason": "D–C–G se répète dans les sections transcrites.",
+      "sources": [
+        "https://www.e-chords.com/chords/kid-rock/all-summer-long"
+      ],
+      "id": "072-all-summer-long",
+      "title": "All Summer Long",
+      "artist": "Kid Rock"
+    },
+    {
+      "n": 73,
+      "loop": "no",
+      "reason": "Couplet, refrain et sortie instrumentale ont des progressions différentes.",
+      "sources": [
+        "https://www.e-chords.com/chords/green-day/boulevard-of-broken-dreams"
+      ],
+      "id": "073-boulevard-of-broken-dreams",
+      "title": "Boulevard of Broken Dreams",
+      "artist": "Green Day"
+    },
+    {
+      "n": 74,
+      "loop": "no",
+      "reason": "Le refrain harmonisé quitte l’ostinato de basse du couplet ; les deux sections ne partagent pas une grille unique.",
+      "sources": [
+        "https://www.e-chords.com/chords/gorillaz/feel-good-inc"
+      ],
+      "id": "074-feel-good-inc",
+      "title": "Feel Good Inc.",
+      "artist": "Gorillaz"
+    },
+    {
+      "n": 75,
+      "loop": "no",
+      "reason": "Le refrain et le pont suivent des grilles différentes de la descente du couplet.",
+      "sources": [
+        "https://www.e-chords.com/chords/james-blunt/youre-beautiful"
+      ],
+      "id": "075-you-re-beautiful",
+      "title": "You're Beautiful",
+      "artist": "James Blunt"
+    },
+    {
+      "n": 76,
+      "loop": "yes",
+      "reason": "A–Bm–F#m–D revient dans les sections transcrites.",
+      "sources": [
+        "https://www.e-chords.com/chords/beyonce/halo"
+      ],
+      "id": "076-halo",
+      "title": "Halo",
+      "artist": "Beyoncé"
+    },
+    {
+      "n": 77,
+      "loop": "no",
+      "reason": "Couplets, refrain et pont suivent plusieurs progressions ; le pont change aussi de région tonale.",
+      "sources": [
+        "https://www.e-chords.com/chords/daniel-powter/bad-day"
+      ],
+      "id": "077-bad-day",
+      "title": "Bad Day",
+      "artist": "Daniel Powter"
+    },
+    {
+      "n": 78,
+      "loop": "no",
+      "reason": "Le refrain emploie une autre succession harmonique que le couplet et le pré-refrain.",
+      "sources": [
+        "https://www.hooktheory.com/theorytab/view/lady-gaga/poker-face"
+      ],
+      "id": "078-poker-face",
+      "title": "Poker Face",
+      "artist": "Lady Gaga"
+    },
+    {
+      "n": 79,
+      "loop": "unknown",
+      "reason": "Le sample principal boucle, mais la transcription ne permet pas de trancher avec certitude sur toutes les transitions et la sortie.",
+      "sources": [
+        "https://www.e-chords.com/chords/mia/paper-planes"
+      ],
+      "id": "079-paper-planes",
+      "title": "Paper Planes",
+      "artist": "M.I.A."
+    },
+    {
+      "n": 80,
+      "loop": "no",
+      "reason": "Le passage C–D interrompt le riff principal ; ce n’est pas un unique cycle continu.",
+      "sources": [
+        "https://www.e-chords.com/chords/the-white-stripes/seven-nation-army"
+      ],
+      "id": "080-seven-nation-army",
+      "title": "Seven Nation Army",
+      "artist": "The White Stripes"
+    },
+    {
+      "n": 81,
+      "loop": "yes",
+      "reason": "Même cycle de quatre accords sur les couplets, refrains et répétitions finales.",
+      "sources": [
+        "https://www.e-chords.com/chords/daft-punk/get-lucky"
+      ],
+      "id": "081-get-lucky",
+      "title": "Get Lucky",
+      "artist": "Daft Punk"
+    },
+    {
+      "n": 82,
+      "loop": "yes",
+      "reason": "Même succession G–Bm–A avec enrichissement A6 ; pas de grille contrastante dans la transcription.",
+      "sources": [
+        "https://www.e-chords.com/chords/rihanna/diamonds"
+      ],
+      "id": "082-diamonds",
+      "title": "Diamonds",
+      "artist": "Rihanna"
+    },
+    {
+      "n": 83,
+      "loop": "no",
+      "reason": "La grille du refrain inclut A là où le couplet prolonge D.",
+      "sources": [
+        "https://www.e-chords.com/chords/avicii/wake-me-up"
+      ],
+      "id": "083-wake-me-up",
+      "title": "Wake Me Up",
+      "artist": "Avicii"
+    },
+    {
+      "n": 84,
+      "loop": "no",
+      "reason": "Le couplet Am–F–G–Em et le refrain F–C–G–Am diffèrent.",
+      "sources": [
+        "https://www.e-chords.com/chords/passenger/let-her-go"
+      ],
+      "id": "084-let-her-go",
+      "title": "Let Her Go",
+      "artist": "Passenger"
+    },
+    {
+      "n": 85,
+      "loop": "no",
+      "reason": "La progression principale est interrompue par une tenue sur F et une transition F–Dm.",
+      "sources": [
+        "https://www.e-chords.com/chords/onerepublic/counting-stars"
+      ],
+      "id": "085-counting-stars",
+      "title": "Counting Stars",
+      "artist": "OneRepublic"
+    },
+    {
+      "n": 86,
+      "loop": "yes",
+      "reason": "C#m–F#m–A–B revient dans les couplets, refrains et le pont ; les coupures d’accompagnement ne créent pas une nouvelle grille.",
+      "sources": [
+        "https://www.e-chords.com/chords/ed-sheeran/shape-of-you"
+      ],
+      "id": "086-shape-of-you",
+      "title": "Shape of You",
+      "artist": "Ed Sheeran"
+    },
+    {
+      "n": 87,
+      "loop": "yes",
+      "reason": "Même cycle de quatre accords dans les couplets, refrains et les passages instrumentaux transcrits.",
+      "sources": [
+        "https://www.e-chords.com/chords/foster-the-people/pumped-up-kicks"
+      ],
+      "id": "087-pumped-up-kicks",
+      "title": "Pumped Up Kicks",
+      "artist": "Foster the People"
+    },
+    {
+      "n": 88,
+      "loop": "no",
+      "reason": "Couplet sur une harmonie statique, refrain avec une descente D–C–G : pas une seule boucle.",
+      "sources": [
+        "https://www.e-chords.com/chords/lorde/royals"
+      ],
+      "id": "088-royals",
+      "title": "Royals",
+      "artist": "Lorde"
+    },
+    {
+      "n": 89,
+      "loop": "no",
+      "reason": "Couplet, pré-refrain et refrain suivent des progressions différentes.",
+      "sources": [
+        "https://www.e-chords.com/chords/sia/chandelier"
+      ],
+      "id": "089-chandelier",
+      "title": "Chandelier",
+      "artist": "Sia"
+    },
+    {
+      "n": 90,
+      "loop": "no",
+      "reason": "Le refrain quitte la progression Eb–Bb–Cm–Ab du couplet.",
+      "sources": [
+        "https://www.e-chords.com/chords/david-guetta/titanium"
+      ],
+      "id": "090-titanium",
+      "title": "Titanium",
+      "artist": "David Guetta ft. Sia"
+    },
+    {
+      "n": 91,
+      "loop": "no",
+      "reason": "Le refrain réordonne les accords et le pré-refrain introduit une autre grille.",
+      "sources": [
+        "https://www.e-chords.com/chords/adele/hello"
+      ],
+      "id": "091-hello",
+      "title": "Hello",
+      "artist": "Adele"
+    },
+    {
+      "n": 92,
+      "loop": "yes",
+      "reason": "Même cycle IV–V–vi–V dans les couplets, pré-refrains, refrains et sortie.",
+      "sources": [
+        "https://www.e-chords.com/chords/the-chainsmokers/closer"
+      ],
+      "id": "092-closer",
+      "title": "Closer",
+      "artist": "The Chainsmokers"
+    },
+    {
+      "n": 93,
+      "loop": "no",
+      "reason": "Le pré-refrain et le refrain diffèrent de la grille des couplets.",
+      "sources": [
+        "https://www.e-chords.com/chords/justin-bieber/love-yourself"
+      ],
+      "id": "093-love-yourself",
+      "title": "Love Yourself",
+      "artist": "Justin Bieber"
+    },
+    {
+      "n": 94,
+      "loop": "no",
+      "reason": "Le refrain introduit E majeur et une autre succession harmonique.",
+      "sources": [
+        "https://www.e-chords.com/chords/twenty-one-pilots/stressed-out"
+      ],
+      "id": "094-stressed-out",
+      "title": "Stressed Out",
+      "artist": "Twenty One Pilots"
+    },
+    {
+      "n": 95,
+      "loop": "no",
+      "reason": "Alternance Dm–C au couplet, puis Dm–C–Bb–C au refrain.",
+      "sources": [
+        "https://www.e-chords.com/chords/gotye/somebody-that-i-used-to-know"
+      ],
+      "id": "095-somebody-that-i-used-to-know",
+      "title": "Somebody That I Used to Know",
+      "artist": "Gotye ft. Kimbra"
+    },
+    {
+      "n": 96,
+      "loop": "yes",
+      "reason": "F–Dm–Bb–F se répète dans toutes les sections transcrites.",
+      "sources": [
+        "https://www.e-chords.com/chords/bruno-mars/just-the-way-you-are"
+      ],
+      "id": "096-just-the-way-you-are",
+      "title": "Just the Way You Are",
+      "artist": "Bruno Mars"
+    },
+    {
+      "n": 97,
+      "loop": "no",
+      "reason": "Le refrain Dbmaj7–Cm7–F7 diffère du vamp du couplet.",
+      "sources": [
+        "https://www.e-chords.com/chords/pharrell-williams/happy"
+      ],
+      "id": "097-happy",
+      "title": "Happy",
+      "artist": "Pharrell Williams"
+    },
+    {
+      "n": 98,
+      "loop": "no",
+      "reason": "La fin reste sur Gm au lieu de poursuivre le cycle Gm–Cm–D.",
+      "sources": [
+        "https://www.e-chords.com/chords/billie-eilish/bad-guy"
+      ],
+      "id": "098-bad-guy",
+      "title": "Bad Guy",
+      "artist": "Billie Eilish"
+    },
+    {
+      "n": 99,
+      "loop": "yes",
+      "reason": "Même cycle i–VI–V7 dans les sections transcrites ; variations d’arrangement.",
+      "sources": [
+        "https://www.e-chords.com/chords/camila-cabello/havana"
+      ],
+      "id": "099-havana",
+      "title": "Havana",
+      "artist": "Camila Cabello"
+    },
+    {
+      "n": 100,
+      "loop": "no",
+      "reason": "Le pont introduit A–F#m–C#m, différent de C#m–E–F#m–C#m.",
+      "sources": [
+        "https://www.e-chords.com/chords/portugal-the-man/feel-it-still"
+      ],
+      "id": "100-feel-it-still",
+      "title": "Feel It Still",
+      "artist": "Portugal. The Man"
+    },
+    {
+      "n": 101,
+      "loop": "yes",
+      "reason": "Même progression i–v–VII–IV à travers les différentes sections.",
+      "sources": [
+        "https://www.e-chords.com/chords/the-weeknd/blinding-lights"
+      ],
+      "id": "101-blinding-lights",
+      "title": "Blinding Lights",
+      "artist": "The Weeknd"
+    },
+    {
+      "n": 102,
+      "loop": "no",
+      "reason": "Le refrain et le pont ont des grilles différentes de celle du couplet.",
+      "sources": [
+        "https://www.e-chords.com/chords/olivia-rodrigo/drivers-license"
+      ],
+      "id": "102-drivers-license",
+      "title": "drivers license",
+      "artist": "Olivia Rodrigo"
+    },
+    {
+      "n": 103,
+      "loop": "no",
+      "reason": "La section centrale change la suite d’accords ; le cycle du refrain ne couvre pas tout le morceau.",
+      "sources": [
+        "https://www.e-chords.com/chords/glass-animals/heat-waves"
+      ],
+      "id": "103-heat-waves",
+      "title": "Heat Waves",
+      "artist": "Glass Animals"
+    },
+    {
+      "n": 104,
+      "loop": "yes",
+      "reason": "Cycle ii–V–I–IV repris à travers les différentes sections.",
+      "sources": [
+        "https://www.e-chords.com/chords/harry-styles/as-it-was"
+      ],
+      "id": "104-as-it-was",
+      "title": "As It Was",
+      "artist": "Harry Styles"
+    },
+    {
+      "n": 105,
+      "loop": "no",
+      "reason": "Le pré-refrain et la conclusion du refrain passent par E7 et F, hors du cycle principal.",
+      "sources": [
+        "https://www.e-chords.com/chords/miley-cyrus/flowers"
+      ],
+      "id": "105-flowers",
+      "title": "Flowers",
+      "artist": "Miley Cyrus"
+    },
+    {
+      "n": 106,
+      "loop": "yes",
+      "reason": "Même cycle Bm–F#m–Em–Bm sur le morceau ; les enrichissements ne changent pas la progression.",
+      "sources": [
+        "https://www.musicologize.com/dua-lipa-levitating-v-live-your-life/"
+      ],
+      "id": "106-levitating",
+      "title": "Levitating",
+      "artist": "Dua Lipa"
+    },
+    {
+      "n": 107,
+      "loop": "yes",
+      "reason": "Le remix PNAU maintient le cycle Bbm7–Ebm7–Gb–Fm7 dans ses différentes sections.",
+      "sources": [
+        "https://www.guitartabsexplorer.com/elton-john/cold-heart-%28dua-lipa%29-chords"
+      ],
+      "id": "107-cold-heart",
+      "title": "Cold Heart",
+      "artist": "Elton John & Dua Lipa"
+    },
+    {
+      "n": 108,
+      "loop": "yes",
+      "reason": "D–Bm–F#m–E se répète dans toutes les sections transcrites.",
+      "sources": [
+        "https://www.e-chords.com/chords/tate-mcrae/greedy"
+      ],
+      "id": "108-greedy",
+      "title": "greedy",
+      "artist": "Tate McRae"
+    },
+    {
+      "n": 109,
+      "loop": "yes",
+      "reason": "Dm7–Em7–Am7 revient dans les couplets, refrains et transitions.",
+      "sources": [
+        "https://www.e-chords.com/chords/sabrina-carpenter/espresso"
+      ],
+      "id": "109-espresso",
+      "title": "Espresso",
+      "artist": "Sabrina Carpenter"
+    },
+    {
+      "n": 110,
+      "loop": "no",
+      "reason": "Couplets et refrains réordonnent les accords, avec des transitions supplémentaires.",
+      "sources": [
+        "https://www.e-chords.com/chords/benson-boone/beautiful-things"
+      ],
+      "id": "110-beautiful-things",
+      "title": "Beautiful Things",
+      "artist": "Benson Boone"
+    },
+    {
+      "n": 111,
+      "loop": "yes",
+      "reason": "F#m–A–Dmaj7–C#7 se répète dans les couplets, refrains et sous le solo.",
+      "sources": [
+        "https://www.e-chords.com/chords/teddy-swims/lose-control"
+      ],
+      "id": "111-lose-control",
+      "title": "Lose Control",
+      "artist": "Teddy Swims"
+    },
+    {
+      "n": 112,
+      "loop": "yes",
+      "reason": "Alternance Gm7–Am7 sur les couplets, refrains et post-refrains.",
+      "sources": [
+        "https://www.gotabs.com/doja-cat/paint-the-town-red-chords"
+      ],
+      "id": "112-paint-the-town-red",
+      "title": "Paint The Town Red",
+      "artist": "Doja Cat"
+    },
+    {
+      "n": 113,
+      "loop": "no",
+      "reason": "La dernière section introduit Fm9–Bbm7–Eb7 et une progression différente.",
+      "sources": [
+        "https://www.e-chords.com/chords/steve-lacy/bad-habit"
+      ],
+      "id": "113-bad-habit",
+      "title": "Bad Habit",
+      "artist": "Steve Lacy"
+    },
+    {
+      "n": 114,
+      "loop": "unknown",
+      "reason": "La grille proposée par la source paraît simplifiée ; version originale à recouper avant validation.",
+      "sources": [
+        "https://www.e-chords.com/chords/rema/calm-down"
+      ],
+      "id": "114-calm-down",
+      "title": "Calm Down",
+      "artist": "Rema"
+    },
+    {
+      "n": 115,
+      "loop": "no",
+      "reason": "Le pont et une transition F–G interrompent le cycle principal Am–F–C–G.",
+      "sources": [
+        "https://www.e-chords.com/chords/rosa-linn/snap"
+      ],
+      "id": "115-snap",
+      "title": "SNAP",
+      "artist": "Rosa Linn"
+    },
+    {
+      "n": 116,
+      "loop": "yes",
+      "reason": "Cycle Gb–Ab–Bbm–Fm maintenu ; les silences d’accompagnement ne constituent pas une nouvelle grille.",
+      "sources": [
+        "https://writewithchorus.com/article/kid-laroi-stay-shakedown"
+      ],
+      "id": "116-stay",
+      "title": "STAY",
+      "artist": "Kid LAROI & Justin Bieber"
+    },
+    {
+      "n": 117,
+      "loop": "yes",
+      "reason": "E–G#m–C#m–A se répète dans les différentes sections.",
+      "sources": [
+        "https://www.e-chords.com/chords/gayle/abcdefu"
+      ],
+      "id": "117-abcdefu",
+      "title": "abcdefu",
+      "artist": "GAYLE"
+    },
+    {
+      "n": 118,
+      "loop": "no",
+      "reason": "Le couplet aboutit sur C, le refrain sur Am ; le pré-refrain suit également une autre progression.",
+      "sources": [
+        "https://www.e-chords.com/chords/david-kushner/daylight"
+      ],
+      "id": "118-daylight",
+      "title": "Daylight",
+      "artist": "David Kushner"
+    },
+    {
+      "n": 119,
+      "loop": "yes",
+      "reason": "Même alternance VImaj7–i dans les couplets et refrains transcrits.",
+      "sources": [
+        "https://www.guitartabsexplorer.com/jack-harlow/first-class-chords"
+      ],
+      "id": "119-first-class",
+      "title": "First Class",
+      "artist": "Jack Harlow"
+    },
+    {
+      "n": 120,
+      "loop": "no",
+      "reason": "Le refrain diffère du couplet et comporte une résolution par la sous-dominante mineure.",
+      "sources": [
+        "https://www.e-chords.com/chords/stephen-sanchez/until-i-found-you"
+      ],
+      "id": "120-until-i-found-you",
+      "title": "Until I Found You",
+      "artist": "Stephen Sanchez"
+    },
+    {
+      "n": 121,
+      "loop": "yes",
+      "reason": "Cm–Gm–Dm–Am se répète dans tout le morceau selon la transcription.",
+      "sources": [
+        "https://www.e-chords.com/chords/jamiroquai/alright"
+      ],
+      "id": "121-alright",
+      "title": "Alright",
+      "artist": "Jamiroquai"
+    }
+  ]
+}

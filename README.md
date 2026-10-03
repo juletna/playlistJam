@@ -30,7 +30,11 @@ Ouvrir http://localhost:4317. Le serveur écoute uniquement sur l’ordinateur l
 
 `data/setlists.json` contient les noms des setlists et les identifiants des morceaux dans l’ordre choisi. Pour sauvegarder ou déplacer le répertoire, copier le dossier `data/`. Le bouton **Exporter la collection** produit aussi une copie JSON complète des chansons et setlists.
 
-Les 120 titres initiaux reprennent uniquement les informations fournies : accords et décennies. Les années exactes, styles et paroles restent à renseigner. Toutes les boucles originales sont **à vérifier**. Une boucle constante désigne la même progression dans la version originale, indépendamment du nombre d’accords. Les exceptions peuvent être indiquées dans les notes.
+Les 120 titres initiaux reprennent les accords et décennies fournis ; Jamiroquai — *Alright* complète la collection. Les années exactes, styles et paroles restent à compléter selon les fiches.
+
+Le champ **boucle** a fait l’objet d’une revue documentaire le 3 octobre 2026 : **40 « Ça boucle », 75 « Ça change », 6 « À vérifier »**. Une boucle constante désigne la même progression dans le même ordre et la même tonalité sur les différentes sections de la version publiée par l’artiste indiqué, indépendamment du nombre d’accords. Un pont différent ou une modulation suffit à classer le morceau dans « Ça change » ; les renversements, enrichissements et coupures d’accompagnement ne constituent pas à eux seuls une nouvelle grille.
+
+Chaque fiche contient l’explication et ses sources dans **Notes**. Le [relevé complet](research/loop-review.json) conserve le critère et les conclusions de cette revue. Il repose sur des grilles, analyses et leçons, sans écoute systématique des enregistrements : certaines transcriptions sont simplifiées. Les six cas non tranchés sont *I Will Survive*, *A Horse With No Name*, *Rapper’s Delight*, *Love Will Tear Us Apart*, *Paper Planes* et *Calm Down*. Les accords importés n’ont pas été corrigés lors de cette revue et ne constituent pas nécessairement une grille complète.
 
 L’application fonctionne hors ligne après installation. Les dépendances de rendu Markdown sont servies localement. Les sauvegardes se font au clic sur Enregistrer, pas automatiquement pendant la saisie.
 
