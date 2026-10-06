@@ -48,7 +48,7 @@ test('setlists immédiates, recherche, création et indépendance du brouillon',
 });
 test('import iReal contextuel et mobile, nouveau morceau et validation des onglets',async({page})=>{
   await page.setViewportSize({width:390,height:844});await page.locator('[data-open=b]').click();await expect(page.locator('.sidebar')).toBeHidden();
-  await page.locator('[data-tool=chords]').click();await expect(page.locator('#song-tools')).toBeVisible();
+  await page.locator('#song-edit').click();await page.locator('[data-tool=chords]').click();await expect(page.locator('#song-tools')).toBeVisible();
   const link=(await readFile(new URL('./fixtures/petes-waltz.txt',import.meta.url),'utf8')).trim();await page.locator('#ireal-input').fill(link);await page.locator('#ireal-analyze').click();await page.locator('#ireal-apply').click();
   await page.locator('#song-tools-close').click();await page.locator('#song-form [type=submit]').click();await expect(page.locator('#song-chart')).toContainText('3/4');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'/tmp/song-page-mobile.png',fullPage:true});
@@ -62,4 +62,34 @@ test('validation révèle les champs obligatoires et échec setlist conserve le 
   await page.route('**/api/setlists',r=>r.fulfill({status:500,json:{error:'Échec simulé'}}));
   await page.locator('#song-set-menu summary').click();await page.locator('[data-song-set=set]').click();await expect(page.locator('#toast')).toContainText('Échec simulé');await expect(page.locator('[data-song-set=set]')).toBeChecked();await expect(page.locator('[name=note]')).toHaveValue('Brouillon conservé');
   await page.locator('#song-set-menu summary').click();page.once('dialog',d=>d.dismiss());await page.goBack();await expect(page.locator('#song-heading')).toHaveText('Beta');await expect(page.locator('[name=note]')).toHaveValue('Brouillon conservé');
+});
+
+test('lecture et modification restent distinctes sur ordinateur et mobile',async({page})=>{
+  await page.locator('[data-open=b]').click();
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:900});
+    await expect(page.locator('#song-chart')).toBeVisible();
+    await expect(page.locator('#song-play-notes')).toBeVisible();
+    await expect(page.locator('[data-tool=chords]')).toBeHidden();
+    await expect(page.locator('#song-chord-fields')).toBeHidden();
+    await expect(page.locator('#song-form [type=submit]')).toBeHidden();
+    await page.locator('#song-edit').click();
+    await expect(page.locator('.song-identity .eyebrow')).toHaveText('MODIFICATION DU MORCEAU');
+    await expect(page.locator('#tab-play')).toHaveText('Accords');
+    await expect(page.locator('#song-chart')).toBeHidden();
+    await expect(page.locator('#song-play-notes')).toBeHidden();
+    await expect(page.locator('#song-rehearse')).toBeHidden();
+    await expect(page.locator('#song-chord-fields')).toBeVisible();
+    await expect(page.locator('[data-tool=chords]')).toBeVisible();
+    await expect(page.locator('#song-form [type=submit]')).toBeVisible();
+    await page.locator('#tab-lyrics').click();
+    await expect(page.locator('#lyrics-editor')).toBeVisible();
+    await expect(page.locator('#song-lyrics-read')).toBeHidden();
+    await page.locator('#tab-info').click();
+    await expect(page.locator('#song-info-fields')).toBeVisible();
+    await expect(page.locator('#song-info-read')).toBeHidden();
+    await page.locator('#cancel-song').click();
+    await expect(page.locator('#tab-play')).toHaveText('Jouer');
+    await expect(page.locator('#song-rehearse')).toBeVisible();
+  }
 });

@@ -236,6 +236,6 @@ Dans les listes de collection et de setlist, `songPreview(song)` calcule un aper
 
 ### Navigation de la fiche
 
-L’interface ouvre chaque morceau dans une page `#song/:id` (sans nouvelle route HTTP), avec les onglets Jouer, Paroles et Informations. « Modifier » active les champs ; Enregistrer revient à la lecture sur la même page. Le retour à la liste conserve les filtres, le tri et le défilement. Les recherches et imports sont accessibles depuis les actions de chaque onglet et conservent l’étape d’application avant sauvegarde.
+L’interface ouvre chaque morceau dans une page `#song/:id` (sans nouvelle route HTTP), avec les onglets Jouer, Paroles et Informations. « Modifier » active les champs ; Enregistrer revient à la lecture sur la même page. Le retour à la liste conserve les filtres, le tri et le défilement. Les recherches et imports sont accessibles uniquement en mode modification, depuis les actions de chaque onglet, et conservent l’étape d’application avant sauvegarde. En modification, l’onglet Jouer devient Accords et les champs remplacent la grille et les notes de lecture. Annuler ou Enregistrer rétablit la lecture.
 
 Le menu « + Setlist » ajoute ou retire immédiatement le morceau via `PUT /api/setlists`, indépendamment du brouillon de la fiche. Un nouveau morceau doit être enregistré avant de pouvoir rejoindre une setlist. La création d’une setlist depuis ce menu y ajoute le morceau sans quitter la fiche.

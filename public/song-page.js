@@ -58,7 +58,7 @@ export function setupSongPage({form, state, values, esc, md, songGrid, renderGri
     $('#song-tools-title').textContent=name==='ireal'||name==='chords'?'Importer une grille':name==='lyrics'?'Rechercher les paroles':'Rechercher les informations';
   }
   function openTools(name,trigger){
-    if(!editing){onEdit();setEditing(true);}toolTrigger=trigger;drawer.hidden=false;source(name==='chords'?'ireal':name);
+    if(!editing)return;toolTrigger=trigger;drawer.hidden=false;source(name==='chords'?'ireal':name);
     $('#song-tools-close').focus();
     if(name==='lyrics')$('#metadata-lyrics-only').click();
   }
@@ -103,8 +103,13 @@ export function setupSongPage({form, state, values, esc, md, songGrid, renderGri
     memberships();
   }
   function setEditing(enabled){
-    editing=enabled;root.classList.toggle('editing',enabled);footer.hidden=!enabled;$('#song-edit').hidden=enabled;$('#song-rehearse').disabled=enabled;
+    editing=enabled;root.classList.toggle('editing',enabled);footer.hidden=!enabled;$('#song-edit').hidden=enabled;$('#song-rehearse').disabled=enabled;$('#song-rehearse').hidden=enabled;
     if(enabled&&root.classList.contains('rehearsing')){root.classList.remove('rehearsing');document.body.classList.remove('song-rehearsing');$('#song-rehearse').textContent='Mode répétition';$('#song-rehearse').setAttribute('aria-pressed','false');tab(activeTab);}
+    $('.song-identity .eyebrow').textContent=enabled?'MODIFICATION DU MORCEAU':'LE CARNET · FICHE CHANSON';
+    $('#tab-play').textContent=enabled?'Accords':'Jouer';
+    $('#panel-play .song-section-heading h2').textContent=enabled?'Modifier les accords':'Grille d’accords';
+    $('#panel-lyrics .song-section-heading h2').textContent=enabled?'Modifier les paroles':'Paroles';
+    $('#panel-info .song-section-heading h2').textContent=enabled?'Modifier les informations':'Informations';
     if(!enabled)closeTools();
   }
   function open({edit=false,sequence=[],origin='Collection',fresh=false}={}){

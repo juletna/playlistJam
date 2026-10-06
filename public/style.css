@@ -319,7 +319,7 @@ button:disabled{cursor:default;opacity:.45}
 #song-info-read dd{margin:5px 0;font-size:16px;overflow-wrap:anywhere}
 .song-page:not(.editing) .song-editor-fields,.song-page.editing #song-info-read,.song-page.editing #song-lyrics-read,.song-page.editing #song-lyrics-source{display:none}
 .song-editor-fields{max-width:850px}
-.song-page.editing #song-chart{max-height:320px;overflow:auto;border-bottom:1px solid var(--line);padding-bottom:16px}
+.song-page.editing #song-chart,.song-page.editing #song-play-notes,.song-page:not(.editing) .enrichment{display:none}
 .song-page .section-chords-grid{grid-template-columns:1fr 1fr;gap:0 22px}
 .song-page .song-title,.song-page .song-artist{border-bottom:1px solid var(--line)}
 #song-dialog .song-savebar{position:sticky;bottom:0;z-index:4;margin:0 -12px;padding:16px 12px;box-shadow:0 -8px 18px #23252208;display:flex}
