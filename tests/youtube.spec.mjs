@@ -1,0 +1,108 @@
+import {editSong,openTool,saveAndReturn} from './song-page-helpers.mjs';
+import {test,expect} from '@playwright/test';
+import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {spawn} from 'node:child_process';
+let dir,server;
+test.beforeAll(async()=>{
+ dir=await mkdtemp(path.join(os.tmpdir(),'playlist-youtube-'));await mkdir(path.join(dir,'songs'));
+ for(const id of ['first','second','third'])await writeFile(path.join(dir,'songs',id+'.md'),`---\ntitle: ${id}\nartist: Artiste\nyear: 2020\ndecade: 2020\nstyle: Pop\nloop: yes\nchords: C - G - Am - F\nnote: Une note\nlyricsUrl: ""\nyoutubeUrl: "${id==='third'?'https://youtu.be/jfKfPfyJRdk':''}"\n---\n\n## Couplet\nDes paroles pour répéter.\n`);
+ await writeFile(path.join(dir,'setlists.json'),JSON.stringify([{id:'session',name:'Session',songIds:['first','third']}]));
+ server=spawn(process.execPath,['server.mjs'],{env:{...process.env,PORT:'4322',DATA_DIR:dir},stdio:'pipe'});
+ await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('error',reject);});
+});
+test.afterAll(async()=>{server?.kill();await rm(dir,{recursive:true,force:true});});
+test('configure, persist, listen, close, mobile and old songs',async({page})=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ // The external service is excluded from deterministic UI checks.
+ await page.route('https://www.youtube-nocookie.com/**',r=>r.fulfill({contentType:'text/html',body:'<meta charset="utf-8"><body style="background:#171717;color:white;display:grid;place-items:center;height:90vh;font-family:sans-serif">YouTube · aperçu de test</body>'}));
+ await page.goto('http://localhost:4322');
+ await expect(page.locator('[data-listen="first"]')).toHaveCount(0);
+ await expect(page.getByText('+ Lien YouTube',{exact:true})).toHaveCount(0);
+ await expect(page.locator('[data-listen="third"]')).toHaveText('▶ Écouter sur YouTube');
+ await page.locator('[data-open="first"]').click();await editSong(page,'info');
+ const input=page.locator('[name=youtubeUrl]');
+ await input.fill('https://example.com');await expect(page.locator('#preview-youtube')).toBeDisabled();
+ expect(await input.evaluate(e=>e.checkValidity())).toBe(false);
+ await input.fill('https://youtu.be/dQw4w9WgXcQ');await page.locator('#preview-youtube').click();
+ await expect(page.locator('#listen-dialog')).toBeVisible();await expect(page.locator('#listen-chords')).toContainText('Am');await expect(page.locator('#listen-lyrics')).toContainText('Des paroles');
+ await page.keyboard.press('Escape');await expect(page.locator('#youtube-player iframe')).toHaveCount(0);await expect(page.locator('#song-dialog')).toBeVisible();
+ await saveAndReturn(page);await expect(page.locator('#song-dialog')).not.toBeVisible();
+ expect(await readFile(path.join(dir,'songs/first.md'),'utf8')).toContain('youtubeUrl: https://youtu.be/dQw4w9WgXcQ');
+ await page.reload();await page.locator('[data-listen="first"]').click();
+ await expect(page.locator('#listen-dialog')).not.toBeVisible();
+ await expect(page.locator('#quick-video iframe')).toHaveAttribute('src',/embed\/dQw4w9WgXcQ\?playsinline=1&rel=0&autoplay=1/);
+ await page.locator('#quick-video iframe').evaluate(e=>e.dataset.instance='original');
+ await page.locator('#search').fill('first');
+ await expect(page.locator('#rows tr')).toHaveCount(1);
+ await expect(page.locator('#quick-video iframe')).toHaveAttribute('data-instance','original');
+ await page.locator('[data-listen="first"]').click();
+ await expect(page.locator('#quick-video iframe')).toHaveAttribute('data-instance','original');
+ await page.locator('#quick-details-toggle').click();await expect(page.locator('#quick-lyrics')).toContainText('Des paroles');
+ await page.locator('#quick-details-toggle').click();
+ await expect(page.locator('#quick-video iframe')).toHaveAttribute('data-instance','original');
+ await page.locator('[data-view="session"]').click();
+ await expect(page.locator('#rows tr')).toHaveCount(2);
+ await expect(page.locator('[data-listen="first"]')).toHaveText('▶ Écouter sur YouTube');
+ await expect(page.locator('[data-listen="first"]')).toHaveAttribute('aria-current','true');
+ await expect(page.locator('#quick-video iframe')).toHaveAttribute('data-instance','original');
+ await page.locator('[data-listen="third"]').click();
+ await expect(page.locator('#quick-title')).toHaveText('third');
+ await expect(page.locator('#quick-video iframe')).toHaveAttribute('src',/embed\/jfKfPfyJRdk/);
+ await expect(page.locator('iframe')).toHaveCount(1);
+ await page.screenshot({path:'/tmp/playlist-youtube-direct-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:'/tmp/playlist-youtube-direct-mobile.png'});
+ const size=await page.locator('#quick-video iframe').boundingBox();expect(size.width).toBeGreaterThanOrEqual(200);expect(size.height).toBeGreaterThanOrEqual(200);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.locator('#close-quick').click();await expect(page.locator('#quick-video iframe')).toHaveCount(0);
+ await expect(page.locator('#quick-listen')).toBeHidden();
+ await page.locator('#library').click();
+ await expect(page.locator('[data-listen="second"]')).toHaveCount(0);
+ await page.locator('[data-open="second"]').click();await editSong(page,'info');await expect(input).toHaveValue('');await expect(page.locator('#preview-youtube')).toBeDisabled();
+ expect(errors).toEqual([]);
+});
+
+test('miniatures YouTube, image absente et suppression de Deezer',async({page})=>{
+ await page.route('https://i.ytimg.com/**',r=>r.fulfill({contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180"><rect width="320" height="180" fill="#475e53"/><path d="M140 55 L140 125 L195 90Z" fill="white"/></svg>'}));
+ await page.goto('http://localhost:4322');
+ const thumbnail=page.locator('tr[data-id="third"] .song-thumbnail');
+ await expect(thumbnail.locator('img')).toHaveAttribute('src','https://i.ytimg.com/vi/jfKfPfyJRdk/mqdefault.jpg');
+ await expect.poll(()=>thumbnail.locator('img').evaluate(i=>i.naturalWidth)).toBe(320);
+ await expect(page.locator('tr[data-id="second"] .song-thumbnail')).toBeVisible();
+ await expect(page.locator('tr[data-id="second"] .song-thumbnail img')).toHaveCount(0);
+ await expect(page.locator('[data-provider=deezer]')).toHaveCount(0);
+ await page.locator('[data-open="second"]').click();await editSong(page,'info');await expect(page.locator('[name=deezerUrl]')).toHaveCount(0);await page.locator('#close-song').click();
+ await page.screenshot({path:'/tmp/playlist-thumbnails-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:'/tmp/playlist-thumbnails-mobile.png',fullPage:true});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.unroute('https://i.ytimg.com/**');await page.route('https://i.ytimg.com/**',r=>r.abort());await page.reload();
+ await expect(thumbnail.locator('img')).toHaveCount(0);await expect(thumbnail).toBeVisible();
+ await page.emulateMedia({media:'print'});await expect(thumbnail).toBeHidden();
+});
+
+test('édition : fermeture toujours accessible et sauvegarde quitte l’édition uniquement en cas de succès',async({page})=>{
+ await page.goto('http://localhost:4322');
+ await page.locator('[data-open="second"]').click();await editSong(page,'info');
+ for(const width of [1280,390]){
+  await page.setViewportSize({width,height:700});
+  const before=await page.locator('#close-song').boundingBox();
+  await page.locator('.song-dialog-content').evaluate(e=>e.scrollTop=e.scrollHeight);
+  const after=await page.locator('#close-song').boundingBox();
+  expect(after.y).toBe(before.y);
+  expect(await page.locator('#close-song').evaluate(e=>{const r=e.getBoundingClientRect();return e.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));})).toBe(true);
+ }
+ await page.locator('#close-song').click();await expect(page.locator('#song-dialog')).not.toBeVisible();
+ await page.locator('[data-open="second"]').click();await editSong(page,'info');
+ await page.locator('[name=note]').fill('Modification à conserver');
+ await page.route('**/api/songs/second',r=>r.fulfill({status:500,contentType:'application/json',body:JSON.stringify({error:'Échec simulé'})}));
+ await page.locator('#song-form [type=submit]').click();
+ await expect(page.locator('#save-state')).toContainText('Échec simulé');
+ await expect(page.locator('#song-dialog')).toBeVisible();
+ await expect(page.locator('[name=note]')).toHaveValue('Modification à conserver');
+ await page.unroute('**/api/songs/second');
+ await saveAndReturn(page);
+ await expect(page.locator('#song-dialog')).not.toBeVisible();
+ await page.reload();await page.locator('[data-open="second"]').click();await editSong(page,'info');
+ await expect(page.locator('[name=note]')).toHaveValue('Modification à conserver');
+});

@@ -1,0 +1,44 @@
+import {editSong,openTool,saveAndReturn} from './song-page-helpers.mjs';
+import {test,expect} from '@playwright/test';
+import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {spawn} from 'node:child_process';
+let dir,server;
+test.beforeAll(async()=>{
+  dir=await mkdtemp(path.join(os.tmpdir(),'playlist-chord-import-'));await mkdir(path.join(dir,'songs'));
+  await writeFile(path.join(dir,'songs/test.md'),'---\ntitle: Test\nartist: Artiste\nyear: null\ndecade: 2020\nstyle: ""\nloop: unknown\nchords: C G\nchordsVerse: D A\nnote: Notes personnelles\nlyricsUrl: https://example.com/lyrics\n---\n\nParoles personnelles\n');
+  server=spawn(process.execPath,['server.mjs'],{env:{...process.env,PORT:'4327',DATA_DIR:dir},stdio:'pipe'});
+  await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('error',reject);});
+});
+test.afterAll(async()=>{server?.kill();await rm(dir,{recursive:true,force:true});});
+const source='https://www.chords-and-tabs.net/song/name/test-song-1';
+const result={title:'Artiste — Test',source,sections:[{field:'chordsVerse',heading:'Verse 1',chords:'Am F'},{field:'chordsVerse',heading:'Verse 2',chords:'Am7 F'},{field:'chordsChorus',heading:'Chorus',chords:'C G/B'}],lyrics:'## Verse 1\nTexte de test',notes:'Source des accords : '+source+'\nCapo: 2',warnings:['Plusieurs variantes'],text:'[Verse 1]\n[Am]Texte de test [F]'};
+test('aperçu, remplacement explicite, variantes et persistance et recalcul de la boucle',async({page})=>{
+  await page.route('**/api/chords/import?*',r=>r.fulfill({json:result}));
+  await page.goto('http://localhost:4327');await page.locator('[data-open=test]').click();await openTool(page,'chords');
+  await page.locator('#chord-import-url').fill(source);await page.locator('#chord-import-fetch').click();
+  await expect(page.locator('#chord-import-title')).toHaveText(result.title);
+  await expect(page.locator('#chord-import-chordsVerse')).not.toBeChecked();await expect(page.locator('#chord-import-chordsChorus')).toBeChecked();
+  await expect(page.locator('#chord-import-lyrics')).not.toBeChecked();
+  await page.locator('#chord-import-chordsVerse').check();await page.getByLabel('Version à importer — Couplet',{exact:true}).selectOption('1');
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.locator('.song-dialog-content').evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
+  await page.locator('#chord-import-preview').scrollIntoViewIfNeeded();await page.screenshot({path:'/tmp/playlist-chord-import-mobile.png'});
+  await page.locator('#chord-import-apply').click();
+  await expect(page.locator('[name=loop]')).toHaveValue('no');await expect(page.locator('[name=chordsVerse]')).toHaveValue('Am7 F');await expect(page.locator('[name=chordsChorus]')).toHaveValue('C G/B');await expect(page.locator('[name=chords]')).toHaveCount(0);
+  await expect(page.locator('[name=lyrics]')).toHaveValue('Paroles personnelles');await expect(page.locator('[name=lyricsUrl]')).toHaveValue('https://example.com/lyrics');
+  await expect(page.locator('[name=note]')).toHaveValue('Notes personnelles\n\n'+result.notes);
+  expect(await readFile(path.join(dir,'songs/test.md'),'utf8')).not.toContain('Am7');
+  await saveAndReturn(page);await expect(page.locator('#song-dialog')).not.toBeVisible();expect(await readFile(path.join(dir,'songs/test.md'),'utf8')).toContain('chords: C G');await page.reload();await page.locator('[data-open=test]').click();await openTool(page,'chords');await expect(page.locator('[name=chordsVerse]')).toHaveValue('Am7 F');
+  await expect(page.locator('#chord-import-url')).toHaveValue('');await expect(page.locator('#chord-import-preview')).toBeHidden();
+});
+test('erreurs et changement d’URL annulent l’aperçu ; paroles importables séparément',async({page})=>{
+  await page.route('**/api/chords/import?*',r=>r.fulfill({status:400,json:{error:'Grille introuvable'}}));await page.goto('http://localhost:4327');await page.locator('[data-open=test]').click();await openTool(page,'chords');
+  await page.locator('#chord-import-url').fill(source);await page.locator('#chord-import-fetch').click();await expect(page.locator('#chord-import-status')).toContainText('Grille introuvable');await expect(page.locator('[name=lyrics]')).toHaveValue('Paroles personnelles');
+  await page.unroute('**/api/chords/import?*');await page.route('**/api/chords/import?*',r=>r.fulfill({json:result}));await page.locator('#chord-import-fetch').click();await expect(page.locator('#chord-import-preview')).toBeVisible();
+  await page.locator('#chord-import-url').fill(source+'2');await expect(page.locator('#chord-import-preview')).toBeHidden();await page.locator('#chord-import-fetch').click();await expect(page.locator('#chord-import-preview')).toBeVisible();
+  for(const id of ['chord-import-chordsVerse','chord-import-chordsChorus','chord-import-notes'])await page.locator('#'+id).uncheck();await expect(page.locator('#chord-import-apply')).toBeDisabled();
+  await page.locator('#chord-import-lyrics').check();await page.locator('#chord-import-apply').click();await expect(page.locator('[name=lyrics]')).toHaveValue(result.lyrics);await expect(page.locator('[name=lyricsUrl]')).toHaveValue(source);
+  await saveAndReturn(page);await expect(page.locator('#song-dialog')).not.toBeVisible();
+});

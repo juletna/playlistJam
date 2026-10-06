@@ -1,0 +1,62 @@
+import {test,expect} from '@playwright/test';
+import {mkdtemp,mkdir,writeFile,readFile,rm,access} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {spawn} from 'node:child_process';
+let dir,server;
+test.beforeAll(async()=>{
+  dir=await mkdtemp(path.join(os.tmpdir(),'playlist-deletion-'));await mkdir(path.join(dir,'songs'));
+  for(const id of ['a','b','c'])await writeFile(path.join(dir,'songs',id+'.md'),`---\ntitle: Morceau ${id}\nartist: Test\nyear: null\ndecade: 2020\nstyle: Pop\nchords: ""\nnote: ""\nlyricsUrl: ""\n---\n\nParoles\n`);
+  await writeFile(path.join(dir,'setlists.json'),JSON.stringify([{id:'set-a',name:'Session',songIds:['a','b','c']}]));
+  server=spawn(process.execPath,['server.mjs'],{env:{...process.env,PORT:'4331',DATA_DIR:dir},stdio:'pipe'});
+  await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('error',reject);server.once('exit',code=>reject(Error('Server exited: '+code)));});
+});
+test.afterAll(async()=>{server?.kill();await rm(dir,{recursive:true,force:true});});
+test('hover, keyboard, cancellation, failure, deletion and persistence',async({page,request})=>{
+  await page.goto('http://localhost:4331');
+  const row=page.locator('tr[data-id=a]'),actions=row.locator('.row-actions');
+  await page.locator('#search').focus();await page.mouse.move(0,0);await expect(actions).toHaveCSS('opacity','0');
+  await row.hover();await expect(actions).toHaveCSS('opacity','1');
+  await expect(row.locator('.chord-col [data-grid]')).toHaveCount(0);
+  await expect(actions.locator('[data-grid] svg')).toHaveCount(1);
+  await row.locator('[data-grid]').click();await page.locator('#close-grid').click();await page.mouse.move(0,0);
+  await expect(actions).toHaveCSS('opacity','0');
+  await row.locator('[data-grid]').click();await page.locator('#grid-dialog').press('Escape');await page.mouse.move(0,0);
+  await expect(actions).toHaveCSS('opacity','1');
+  await page.mouse.move(0,0);await row.locator('[data-open]').focus();await expect(actions).toHaveCSS('opacity','1');
+  await row.locator('[data-delete]').click();
+  await expect(page.getByRole('dialog',{name:'Supprimer ce morceau ?'})).toBeVisible();
+  await expect(page.locator('#delete-item-title')).toHaveText('Morceau a');
+  await expect(page.locator('#cancel-delete')).toBeFocused();
+  await page.locator('#delete-dialog').press('Escape');await expect(row.locator('[data-delete]')).toBeFocused();await expect(row).toHaveCount(1);
+  await row.locator('[data-delete]').click();await page.locator('#cancel-delete').click();await expect(row).toHaveCount(1);
+  await page.route('**/api/songs/a',route=>route.fulfill({status:500,contentType:'application/json',body:'{"error":"Suppression refusée"}'}));
+  await row.locator('[data-delete]').click();await page.locator('#confirm-delete').click();await expect(page.locator('#toast')).toHaveText('Suppression refusée');await expect(row.locator('[data-delete]')).toBeEnabled();await access(path.join(dir,'songs/a.md'));
+  await page.unroute('**/api/songs/a');
+  await row.locator('[data-select]').check();await row.locator('[data-delete]').click();await page.locator('#confirm-delete').click();await expect(row).toHaveCount(0);await expect(page.locator('#selection-bar')).toBeHidden();
+  expect(JSON.parse(await readFile(path.join(dir,'setlists.json'),'utf8'))[0].songIds).toEqual(['b','c']);await expect(access(path.join(dir,'songs/a.md'))).rejects.toThrow();
+  await page.locator('[data-view=set-a]').click();await page.locator('tr[data-id=b] [data-open]').click();await page.locator('#song-more summary').click();await expect(page.locator('#delete-song')).toBeVisible();
+  await page.locator('#delete-song').click();await page.locator('#confirm-delete').click();await expect(page.locator('#song-dialog')).not.toBeVisible();await expect(page.locator('#rows tr')).toHaveCount(1);
+  await page.reload();await expect(page.locator('#rows tr')).toHaveCount(1);
+  await page.locator('#new-song').click();await expect(page.locator('#delete-song')).toBeHidden();await page.locator('#cancel-song').click();
+  const missing=await request.delete('http://localhost:4331/api/songs/a');expect(missing.status()).toBe(404);
+  const forbidden=await request.delete('http://localhost:4331/api/songs/c',{headers:{Origin:'https://example.com'}});expect(forbidden.status()).toBe(403);await access(path.join(dir,'songs/c.md'));
+  await page.locator('[data-display=artists]').click();await page.locator('.artist-title').focus();await page.keyboard.press('Tab');await expect(page.locator('.artist-song [data-delete]')).toHaveCSS('opacity','1');
+});
+test('touch actions remain visible',async({browser})=>{
+  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});const page=await context.newPage();await page.goto('http://localhost:4331');await expect(page.locator('.row-actions').first()).toHaveCSS('opacity','1');await page.locator('[data-open]').first().click();await page.locator('#song-more summary').click();await expect(page.locator('#delete-song')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.locator('#delete-song').click();await expect(page.locator('#delete-dialog')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'/tmp/playlist-delete-mobile.png'});await page.locator('#cancel-delete').click();await context.close();
+});
+
+test('setlist confirmation preserves songs and can be cancelled',async({page})=>{
+  await page.goto('http://localhost:4331');await page.locator('[data-view=set-a]').click();
+  await page.locator('#delete-set').click();
+  await expect(page.getByRole('dialog',{name:'Supprimer cette setlist ?'})).toBeVisible();
+  await expect(page.locator('#delete-item-title')).toHaveText('Session');
+  await expect(page.locator('#delete-description')).toHaveText('Les morceaux resteront dans ta collection.');
+  await page.locator('#close-delete').click();await expect(page.locator('#view-title')).toContainText('Session');
+  await page.locator('#delete-set').click();await page.locator('#confirm-delete').click();
+  await expect(page.locator('#view-title')).toContainText('La collection');
+  await expect(page.locator('[data-view=set-a]')).toHaveCount(0);
+  expect(JSON.parse(await readFile(path.join(dir,'setlists.json'),'utf8'))).toEqual([]);
+  await access(path.join(dir,'songs/c.md'));
+});
